@@ -54,10 +54,11 @@ class AuthController extends Controller
 
     // GET /auth/me
     public function me()
-    {
-        return response()->json([
-            'success' => true,
-            'data' => Auth::user()
-        ]);
+{
+    try {
+        return response()->json(auth('api')->user());
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
     }
+}
 }

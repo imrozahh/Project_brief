@@ -23,38 +23,13 @@
         
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
-                <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
-                    <h1 class="mb-1 font-large">LOGIN</h1>
-                    <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]"></p>
-                    
-                    <ul class="flex gap-3 text-sm leading-normal">
-                        <form action="auth/login" method="POST" class="flex flex-col gap-3 w-full">
-                            @csrf
-                            <li class="flex-1">
-                                <input type="email" name="email" placeholder="Email" class="w-full px-3 py-2 border border-[#dcdcdc] dark:border-[#3E3E3A] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1b1b18] dark:focus:ring-[#EDEDEC]">
-                            </li>
-                            <li class="flex-1">
-                                <input type="password" name="password" placeholder="Password" class="w-full px-3 py-2 border border-[#dcdcdc] dark:border-[#3E3E3A] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#1b1b18] dark:focus:ring-[#EDEDEC]">
-                            </li>
-                            <li>
-                                <button type="submit" class="inline-block">
-                                    <span class="inline-block px-5 py-2 bg-[#1b1b18] dark:bg-[#EDEDEC] text-white dark:text-[#1b1b18] rounded-sm hover:bg-[#191400] dark:hover:bg-[#EDEDEC] transition-colors duration-200">
-                                        Submit
-                                    </span>
-                                </button>
-                            </li>
-                        </form>
-                    </ul>
-                </div>
-                <div class="bg-[#fff2f2] dark:bg-[#1D0002] relative lg:-ml-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg aspect-[335/376] lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">
-                    <img src="{{ asset('images/jti.jpg') }}" alt="Laravel Logo" class="w-[120px] sm:w-[150px] md:w-[200px] lg:w-[250px] h-auto object-contain mx-auto">
-                    <div class="absolute inset-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]"></div>
-                </div>
+                
             </main>
         </div>
 
         @if (Route::has('login'))
-            <div class="h-14.5 hidden lg:block"></div>
+            <div class="h-14.5  lg:block"><a href="auth/logout"><button class="btn btn-danger" type="button">Logout</button></a></div>
+            <div class="h-14.5  lg:block"><a href="auth/me"><button class="btn btn-primary" type="button">Profil</button></a></div>
         @endif
     </body>
 </html>
